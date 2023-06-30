@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Employee() {
+function Employee(props) {
   return (
     <div>
-      <h1>This is the Employee Component</h1>
+      <h3>Employee {props.name}</h3>
+      {props.role ? <p>{props.role}</p> : <p>No Role Available</p>}
     </div>
   )
 }
-
 export default Employee
