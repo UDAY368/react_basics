@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './App.css';
+import './index.css';
 import Employee from './components/Employee';
 
 
@@ -8,10 +8,10 @@ function App() {
   const [role , setRole] = useState("dev")
   const isShowEmployee = true
   return (
-    <div>
+    <div className='App'>
       
       { isShowEmployee ? <>
-        <input type='text' onChange={(e) => {
+        <input type='text' placeholder="Enter Role" className='p-1' onChange={(e) => {
           setRole(e.target.value)
         }}/>
        <Employee name = "Uday Kumar" role = "Product Engineer"/>
