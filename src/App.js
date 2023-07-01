@@ -4,6 +4,7 @@ import Employee from "./components/Employee";
 import AddEmployee from "./components/AddEmployee";
 import { v4 as uuidv4 } from "uuid";
 import EditEmployee from "./components/EditEmployee";
+import Header from "./components/Header";
 
 function App() {
   // Perfect usage of the useState Hook
@@ -69,10 +70,11 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App  bg-gray-300 min-h-screen">
+      <Header />
       {isShowemployee ? (
         <>
-          <div className=" flex flex-wrap justify-center">
+          <div className=" flex flex-wrap justify-center mt-3">
             {employees.map((employee) => {
               const editEmployee = (
                 <EditEmployee
