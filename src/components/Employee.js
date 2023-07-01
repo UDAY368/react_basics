@@ -1,5 +1,4 @@
 import React from "react";
-import EditEmployee from "./EditEmployee";
 
 function Employee(props) {
   return (
@@ -16,12 +15,7 @@ function Employee(props) {
             {props.role ? props.role : "No role"}
           </p>
         </div>
-        <EditEmployee
-          name={props.name}
-          role={props.role}
-          id={props.id}
-          updateEmployee={props.updateEmployee}
-        />
+        {props.updateEmployee}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import "./index.css";
 import Employee from "./components/Employee";
 import AddEmployee from "./components/AddEmployee";
 import { v4 as uuidv4 } from "uuid";
+import EditEmployee from "./components/EditEmployee";
 
 function App() {
   // Perfect usage of the useState Hook
@@ -43,24 +44,6 @@ function App() {
       role: "Java Developer",
       img: "https://images.pexels.com/photos/7897404/pexels-photo-7897404.jpeg",
     },
-    {
-      id: 7,
-      name: "Shankar",
-      role: "python Developer",
-      img: "https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg",
-    },
-    {
-      id: 8,
-      name: "Prasad",
-      role: "employeee Relations",
-      img: "https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg",
-    },
-    {
-      id: 9,
-      name: "Chiranjeevi",
-      role: "CEO",
-      img: "https://images.pexels.com/photos/2955376/pexels-photo-2955376.jpeg",
-    },
   ]);
   const isShowemployee = true;
 
@@ -91,6 +74,14 @@ function App() {
         <>
           <div className=" flex flex-wrap justify-center">
             {employees.map((employee) => {
+              const editEmployee = (
+                <EditEmployee
+                  name={employee.name}
+                  role={employee.role}
+                  id={employee.id}
+                  updateEmployee={updateEmployee}
+                />
+              );
               return (
                 <Employee
                   key={employee.id}
@@ -98,7 +89,7 @@ function App() {
                   name={employee.name}
                   role={employee.role}
                   img={employee.img}
-                  updateEmployee={updateEmployee}
+                  updateEmployee={editEmployee}
                 />
               );
             })}
