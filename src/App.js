@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./index.css";
 import Employee from "./components/Employee";
+import AddEmployee from "./components/AddEmployee";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   // Perfect usage of the useState Hook
@@ -73,6 +75,16 @@ function App() {
     setemployees(updateEmployees);
   }
 
+  function addEmployee(name, role, image) {
+    const newEmployee = {
+      id: uuidv4(),
+      name: name,
+      role: role,
+      img: image,
+    };
+    setemployees([...employees, newEmployee]);
+  }
+
   return (
     <div className="App">
       {isShowemployee ? (
@@ -91,6 +103,7 @@ function App() {
               );
             })}
           </div>
+          <AddEmployee addEmployee={addEmployee} />
         </>
       ) : (
         <p>There is no employeee to Display</p>
