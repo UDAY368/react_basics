@@ -1,3 +1,4 @@
+import Dictionary from "./components/Dictionary";
 import Header from "./components/Header";
 import "./index.css";
 import Customers from "./pages/Customers";
@@ -11,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/employees" element={<Employees />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/dictionary" element={<Dictionary />} />
         </Routes>
       </Header>
     </BrowserRouter>
