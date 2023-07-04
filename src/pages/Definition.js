@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NotFound from "../components/NotFound";
 
 function Definition() {
@@ -9,7 +9,6 @@ function Definition() {
   const [notFound, setNotFound] = useState(false);
   console.log(useParams());
   let { search } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
