@@ -12,7 +12,7 @@ function Definition() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   const fetchData = () => {
     axios
